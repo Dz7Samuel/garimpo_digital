@@ -8,97 +8,71 @@
 
 <title>Garimpo Digital</title>
 
-<meta name="description" content="Garimpo Digital encontra os melhores produtos com os melhores preços. A joia rara entre milhares de opções.">
-
+<meta name="description" content="Garimpo Digital encontra os melhores produtos com os melhores preços.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://seusite.com/">
-
-<meta property="og:title" content="Garimpo Digital">
-<meta property="og:description" content="A joia rara entre milhares de opções">
-<meta property="og:type" content="website">
 
 <style>
 
-/* ===== RESET ===== */
-
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
-/* ===== BODY ===== */
-
+/* BODY */
 body{
 font-family:Arial, sans-serif;
 background:#0f172a;
 color:white;
 }
 
-/* ===== HEADER ===== */
-
+/* HEADER */
 header{
-
 background:linear-gradient(90deg,#f59e0b,#f97316);
 padding:30px;
 text-align:center;
 box-shadow:0 4px 15px rgba(0,0,0,0.3);
-
 }
 
 header h1{
-
 font-size:34px;
-
 }
 
 header a{
-
 color:#0f172a;
 text-decoration:none;
-
 }
 
 header p{
-
 margin-top:6px;
 font-size:15px;
-
 }
 
-/* ===== MAIN ===== */
-
+/* MAIN */
 main{
-
 max-width:1100px;
 margin:auto;
 padding:25px;
-
 }
 
-/* ===== SEARCH ===== */
-
+/* SEARCH */
 .search{
-
 display:flex;
 gap:10px;
 margin-bottom:30px;
-
 }
 
 .search input{
-
 flex:1;
 padding:14px;
 border-radius:10px;
 border:none;
 font-size:16px;
 outline:none;
-
 }
 
 .search button{
-
 background:#f59e0b;
 border:none;
 padding:14px 25px;
@@ -106,68 +80,48 @@ border-radius:10px;
 font-weight:bold;
 cursor:pointer;
 transition:0.3s;
-
 }
 
 .search button:hover{
-
 background:#f97316;
 transform:scale(1.05);
-
 }
 
-/* ===== GRID ===== */
-
+/* GRID */
 .grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
-
 }
 
-/* ===== CARD ===== */
-
+/* CARD */
 .card{
-
 background:#1e293b;
 padding:20px;
 border-radius:12px;
 transition:0.3s;
-position:relative;
-
 }
 
 .card:hover{
-
 transform:translateY(-6px);
 box-shadow:0 10px 25px rgba(0,0,0,0.5);
-
 }
 
 .card h3{
-
 font-size:18px;
 margin-bottom:10px;
-min-height:50px;
-
 }
 
-/* ===== PRICE ===== */
-
+/* PRICE */
 .price{
-
 font-size:24px;
 color:#22c55e;
 font-weight:bold;
 margin-bottom:12px;
-
 }
 
-/* ===== BUTTON ===== */
-
+/* BUTTON */
 .buy{
-
 display:inline-block;
 background:#f59e0b;
 color:#0f172a;
@@ -176,84 +130,66 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-
 }
 
 .buy:hover{
-
 background:#f97316;
 transform:scale(1.08);
-
 }
 
-/* ===== FOOTER ===== */
-
+/* FOOTER */
 footer{
-
 text-align:center;
 padding:30px;
 margin-top:50px;
 font-size:14px;
 color:#cbd5f5;
 border-top:1px solid rgba(255,255,255,0.1);
-
 }
 
 footer a{
-
 color:#f59e0b;
 text-decoration:none;
-
+cursor:pointer;
 }
 
 footer a:hover{
-
 text-decoration:underline;
-
 }
 
-<style>
-/* Fundo escuro atrás do modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9998;
+/* MODAL */
+.modal-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
 }
 
-/* Caixa do modal */
-.modal-box {
-  background: #ffffff;
-  width: 90%;
-  max-width: 700px;
-  max-height: 80%;
-  overflow-y: auto;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.3);
-  position: relative;
-  z-index: 9999;
+.modal-box{
+background:white;
+color:black;
+padding:25px;
+border-radius:12px;
+max-width:600px;
+max-height:80%;
+overflow:auto;
+position:relative;
 }
 
-/* Botão fechar */
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-  color: #333;
+.modal-close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:22px;
+cursor:pointer;
 }
 
-.modal-close:hover {
-  color: red;
-}
 </style>
 
 </head>
@@ -272,7 +208,6 @@ Garimpo Digital
 
 </header>
 
-
 <main>
 
 <div class="search">
@@ -289,33 +224,89 @@ Buscar
 
 </main>
 
-
 <footer>
 
 <p>
-Este site participa de programas de afiliados e pode receber comissões sem custo adicional para você.
+Este site participa do Programa de Associados da Amazon e pode receber comissões por compras qualificadas, sem custo adicional para você.
 </p>
 
 <p>
 
-<a href="terms.html">
-Termos de Afiliados
-</a>
+<a onclick="openTerms()">Termos de Afiliados</a>
 
 •
 
-<a href="privacy.html">
-Política de Privacidade
-</a>
+<a onclick="openPrivacy()">Política de Privacidade</a>
 
 </p>
 
 </footer>
 
+<!-- TERMS MODAL -->
+<div id="termsModal" class="modal-overlay">
+
+<div class="modal-box">
+
+<span class="modal-close" onclick="closeTerms()">&times;</span>
+
+<h2>Termos de Afiliados</h2>
+
+<br>
+
+<p>
+Este site participa do Programa de Associados da Amazon Services LLC.
+</p>
+
+<br>
+
+<p>
+Como afiliado, podemos receber comissões por compras qualificadas feitas através dos links deste site.
+</p>
+
+<br>
+
+<p>
+Isso não gera custo adicional para o usuário.
+</p>
+
+</div>
+
+</div>
+
+<!-- PRIVACY MODAL -->
+<div id="privacyModal" class="modal-overlay">
+
+<div class="modal-box">
+
+<span class="modal-close" onclick="closePrivacy()">&times;</span>
+
+<h2>Política de Privacidade</h2>
+
+<br>
+
+<p>
+Não coletamos dados pessoais diretamente.
+</p>
+
+<br>
+
+<p>
+Podemos usar cookies e links afiliados para melhorar sua experiência.
+</p>
+
+<br>
+
+<p>
+Ao usar este site, você concorda com esta política.
+</p>
+
+</div>
+
+</div>
 
 <script>
 
-/* ===== PRODUTOS ===== */
+/* PRODUTOS */
 
 const produtos = [
 
@@ -338,57 +329,27 @@ link:"https://amzn.to/4bxUTma"
 },
 
 {
-nome:"Echo Dot Smart Speaker com Alexa Azul",
+nome:"Echo Dot Alexa Azul",
 preco:428.99,
 link:"https://amzn.to/4aibNTx"
 },
-  
-{
-nome:"Echo Dot Smart Speaker com Alexa Preto",
-preco:429.00,
-link:"https://amzn.to/4tiHULu"
-},
 
 {
-nome:"Echo Dot Smart Speaker com Alexa Branco",
-preco:459.00,
-link:"https://amzn.to/4tiJr46"
-},
-  
-{
-nome:"Mouse Gamer Logitech G203 RGB Branco",
+nome:"Mouse Logitech G203 RGB",
 preco:135.90,
 link:"https://amzn.to/46mGSEk"
 },
-  
-{
-nome:"Mouse Gamer Logitech G203 RGB Lilás",
-preco:139.99,
-link:"https://amzn.to/4qgTbcn"
-},
 
 {
-nome:"Mouse Gamer Logitech G203 RGB Preto",
-preco:119.99,
-link:"https://amzn.to/4abT3Fe"
-},
-
-{
-nome:"Teclado Gamer Redragon Kumara Preto",
+nome:"Teclado Redragon Kumara",
 preco:200.00,
 link:"https://amzn.to/3Ms3EE3"
-},
-
-{
-nome:"Teclado Mecanico Redragon Kumara Branco",
-preco:170.90,
-link:"https://amzn.to/4a06Z6q"
-},
+}
 
 ];
 
 
-/* ===== MOSTRAR PRODUTOS ===== */
+/* MOSTRAR */
 
 function mostrar(lista){
 
@@ -396,20 +357,13 @@ const results = document.getElementById("results");
 
 results.innerHTML = "";
 
-if(lista.length === 0){
+lista.forEach(produto=>{
 
-results.innerHTML = "<p>Nenhum produto encontrado.</p>";
-return;
+const card=document.createElement("div");
 
-}
+card.className="card";
 
-lista.forEach(produto => {
-
-const card = document.createElement("div");
-
-card.className = "card";
-
-card.innerHTML = `
+card.innerHTML=`
 
 <h3>${produto.nome}</h3>
 
@@ -430,13 +384,13 @@ results.appendChild(card);
 }
 
 
-/* ===== BUSCA ===== */
+/* BUSCAR */
 
 function buscar(){
 
-const q = document.getElementById("query").value.toLowerCase();
+const q=document.getElementById("query").value.toLowerCase();
 
-const filtrados = produtos.filter(p =>
+const filtrados=produtos.filter(p=>
 p.nome.toLowerCase().includes(q)
 );
 
@@ -445,12 +399,31 @@ mostrar(filtrados);
 }
 
 
-/* ===== INICIAR ===== */
+/* MODAL */
+
+function openTerms(){
+document.getElementById("termsModal").style.display="flex";
+}
+
+function closeTerms(){
+document.getElementById("termsModal").style.display="none";
+}
+
+function openPrivacy(){
+document.getElementById("privacyModal").style.display="flex";
+}
+
+function closePrivacy(){
+document.getElementById("privacyModal").style.display="none";
+}
+
+
+/* INICIAR */
 
 mostrar(produtos);
 
-<script>
-  
+</script>
+
 </body>
 
 </html>
