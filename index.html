@@ -1,242 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
 
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="logo.png">
-  <meta property="og:image" content="logo.png">
+<meta charset="UTF-8">
+<title>Garimpo Digital</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garimpo Digital</title>
+<link rel="stylesheet" href="style.css">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Garimpo Digital</title>
-
-<meta property="og:title" content="Garimpo Digital">
-<meta property="og:site_name" content="Garimpo Digital">
-
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-
-    header {
-      background: linear-gradient(90deg, #f59e0b, #f97316);
-      padding: 30px;
-      text-align: center;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .search {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .search input {
-      flex: 1;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-
-    .search button {
-      padding: 12px 20px;
-      border-radius: 8px;
-      border: none;
-      background: #f59e0b;
-      color: #0f172a;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .search button:hover {
-      background: #f97316;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .badge.best {
-      background: #22c55e;
-    }
-
-    .badge.cheap {
-      background: #38bdf8;
-    }
-
-    .badge.premium {
-      background: #a855f7;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .buy {
-      background: #f59e0b;
-      color: #0f172a;
-      padding: 8px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .buy:hover {
-      background: #f97316;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #cbd5f5;
-    }
-  </style>
 </head>
+  <link rel="stylesheet" href="style.css">
 
 <body>
+  <script src="script.js"></script>
 
 <header>
-  <h1>
-    <a href="index.html" style="color:#0f172a; text-decoration:none;">
-      Garimpo Digital
-    </a>
-  </h1>
-  <p>A joia rara entre milhares de opções</p>
+<h1>Garimpo Digital</h1>
+<p>A joia rara entre milhares de opções</p>
 </header>
 
-  <main>
-    <div class="search">
-      <input id="query" type="text" placeholder="Pesquise um produto (ex: fone bluetooth JBL)" />
-      <button onclick="buscar()">Garimpar</button>
-    </div>
+<main>
 
-    <div id="results"></div>
-  </main>
+<div class="search-box">
 
-<footer>
-  <p> Atenção este site é afiliado das empresas Amazon e Mercado Livre.</p>
+<input id="query" placeholder="Pesquisar produto">
 
-  <p>
-    <a href="terms.html" target="_blank">Termos e Política de Afiliados</a> •
-    <a href="privacy.html" target="_blank">Política de Privacidade</a>
-  </p>
-</footer>
+<button onclick="buscar()">
+Garimpar
+</button>
 
-  <script>
-    const produtos = [
-      {
-        nome: "JBL Fone de Ouvido On ear Headphone Tune 520BT Sem Fio - Preto",
-        loja: "Amazon",
-        preco: 207.52,
-        avaliacao: 4.8,
-        tipo: "premium",
-        link: "https://amzn.to/46rJKQf"
-      },
-       {
-        nome: "JBL Fone de Ouvido Tune 500 Com Fio - Preto",
-        loja: "Amazon",
-        preco: 137.76,
-        avaliacao: 4.7,
-        tipo: "cheap",
-        link: "https://amzn.to/4bEFSPt"
-      },
-       {
-        nome: "Fone de Ouvido sem fio Bluetooth AerJoy On-Ear Dobrável autonomia de 52 horas",
-        loja: "Amazon",
-        preco: 163.90,
-        avaliacao: 4.5,
-        tipo: "best",
-        link: "https://amzn.to/4bxUTma"
-      },
-      ];
+</div>
 
-function buscar() {
-  const q = document.getElementById("query").value.toLowerCase().trim();
-  const results = document.getElementById("results");
-  results.innerHTML = "";
+<div id="results" class="grid"></div>
 
-  if (!q) {
-    alert("Digite um produto para garimpar!");
-    return;
-  }
+</main>
 
-  // 1️⃣ Filtrar produtos relacionados à busca
-  const filtrados = produtos.filter(p =>
-    p.nome.toLowerCase().includes(q)
-  );
-
-  if (filtrados.length === 0) {
-    results.innerHTML = "<p>Nenhum produto encontrado.</p>";
-    return;
-  }
-
-  // 2️⃣ Ordenar por custo-benefício (avaliação / preço)
-  filtrados.sort((a, b) => {
-    const scoreA = a.avaliacao / a.preco;
-    const scoreB = b.avaliacao / b.preco;
-    return scoreB - scoreA;
-  });
-
-  // 3️⃣ Mostrar resultados
-  filtrados.forEach(p => {
-    const badgeText =
-      p.tipo === "best" ? "Melhor custo-benefício" :
-      p.tipo === "cheap" ? "Mais barato" :
-      "Alternativa premium";
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <span class="badge ${p.tipo}">${badgeText}</span>
-      <h3>${p.nome}</h3>
-      <p>Loja: ${p.loja} • Avaliação: ⭐ ${p.avaliacao}</p>
-      <div class="row">
-        <div class="price">R$ ${p.preco.toFixed(2)}</div>
-        <a class="buy" href="${p.link}" target="_blank">Ir para a loja</a>
-      </div>
-    `;
-
-    results.appendChild(card);
-  });
-}
-  </script>
+<script src="script.js"></script>
 
 </body>
 </html>
+
