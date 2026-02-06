@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Garimpo Digital</title>
 
-<meta name="description" content="Garimpo Digital encontra os melhores produtos com os melhores preços.">
+<meta name="description" content="Garimpo Digital encontra os melhores produtos com os melhores preços">
+
 <meta property="og:title" content="Garimpo Digital">
 <meta property="og:description" content="A joia rara entre milhares de opções">
-<meta property="og:type" content="website">
 
 <style>
 
-/* ===== ESTILO GERAL ===== */
+/* ===== GERAL ===== */
 
 body{
 margin:0;
@@ -23,48 +24,62 @@ color:white;
 }
 
 header{
+
 background:linear-gradient(90deg,#f59e0b,#f97316);
 padding:25px;
 text-align:center;
+
 }
 
 header h1{
+
 margin:0;
 font-size:32px;
+
 }
 
 header a{
+
 color:#0f172a;
 text-decoration:none;
+
 }
 
 header p{
+
 margin-top:5px;
 font-size:14px;
+
 }
 
-/* ===== AREA PRINCIPAL ===== */
+/* ===== AREA ===== */
 
 main{
-max-width:1100px;
+
+max-width:1000px;
 margin:auto;
 padding:20px;
+
 }
 
 /* ===== BUSCA ===== */
 
 .search{
+
 display:flex;
 gap:10px;
 margin-bottom:30px;
+
 }
 
 .search input{
+
 flex:1;
 padding:12px;
 border-radius:8px;
 border:none;
 font-size:16px;
+
 }
 
 .search button{
@@ -77,6 +92,7 @@ font-weight:bold;
 cursor:pointer;
 
 transition:0.3s;
+
 }
 
 .search button:hover{
@@ -99,8 +115,9 @@ gap:20px;
 .card{
 
 background:#1e293b;
+padding:20px;
 border-radius:10px;
-overflow:hidden;
+
 transition:0.3s;
 
 }
@@ -109,25 +126,6 @@ transition:0.3s;
 
 transform:translateY(-5px);
 box-shadow:0 0 15px rgba(0,0,0,0.5);
-
-}
-
-/* IMAGEM */
-
-.card img{
-
-width:100%;
-height:200px;
-object-fit:contain;
-background:white;
-
-}
-
-/* CONTEUDO */
-
-.card-content{
-
-padding:15px;
 
 }
 
@@ -153,9 +151,11 @@ color:#22c55e;
 .buy{
 
 display:inline-block;
-margin-top:10px;
+margin-top:12px;
+
 background:#f59e0b;
 color:#0f172a;
+
 padding:10px 15px;
 border-radius:8px;
 text-decoration:none;
@@ -237,8 +237,7 @@ Buscar
 <footer>
 
 <p>
-Este site participa de programas de afiliados da Amazon e outras empresas.
-Podemos receber comissões sem custo adicional para você.
+Este site participa de programas de afiliados e pode receber comissões sem custo adicional para você.
 </p>
 
 <p>
@@ -260,51 +259,32 @@ Política de Privacidade
 
 <script>
 
-/* ===== LISTA DE PRODUTOS ===== */
-/* PARA ADICIONAR NOVO PRODUTO COPIE E COLE UM BLOCO */
+/* PRODUTOS */
 
 const produtos = [
 
 {
-
 nome:"JBL Tune 520BT Sem Fio",
-
 preco:207.52,
-
-link:"https://amzn.to/46rJKQf",
-
-imagem:"imagens/jbl520bt.jpg"
-
+link:"https://amzn.to/46rJKQf"
 },
 
 {
-
 nome:"JBL Tune 500 Com Fio",
-
 preco:137.76,
-
-link:"https://amzn.to/4bEFSPt",
-
-imagem:"imagens/jbl500.jpg"
-
+link:"https://amzn.to/4bEFSPt"
 },
 
 {
-
 nome:"Fone Bluetooth AerJoy",
-
 preco:163.90,
-
-link:"https://amzn.to/4bxUTma",
-
-imagem:"imagens/aerjoy.jpg"
-
+link:"https://amzn.to/4bxUTma"
 }
 
 ];
 
 
-/* ===== MOSTRAR PRODUTOS ===== */
+/* MOSTRAR */
 
 function mostrar(lista){
 
@@ -320,10 +300,6 @@ card.className="card";
 
 card.innerHTML=`
 
-<img src="${produto.imagem}" alt="produto">
-
-<div class="card-content">
-
 <h3>${produto.nome}</h3>
 
 <div class="price">
@@ -338,11 +314,9 @@ target="_blank"
 
 class="buy">
 
-Ver na loja
+Ver na Amazon
 
 </a>
-
-</div>
 
 `;
 
@@ -353,7 +327,7 @@ results.appendChild(card);
 }
 
 
-/* ===== BUSCA ===== */
+/* BUSCA */
 
 function buscar(){
 
@@ -370,11 +344,12 @@ mostrar(filtrados);
 }
 
 
-/* MOSTRAR TODOS AO ABRIR */
+/* INICIAR */
 
 mostrar(produtos);
 
 </script>
+
 
 </body>
 </html>
