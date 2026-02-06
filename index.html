@@ -10,128 +10,120 @@
 
 /* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 /* BODY */
 body{
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+background: linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 /* HEADER */
 header{
-    background:#020617;
-    width:100%;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+background:#020617;
+width:100%;
+padding:20px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* NOME DO SITE */
 .site-name{
-    font-size:28px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
 .site-name:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
-/* SLOGAN */
 .slogan{
-    font-size:14px;
-    color:#94a3b8;
-    margin-top:5px;
+font-size:14px;
+color:#94a3b8;
+margin-top:5px;
 }
 
 /* CONTAINER */
 .container{
-    background:white;
-    color:black;
-    margin-top:30px;
-    padding:30px;
-    border-radius:12px;
-    width:90%;
-    max-width:900px;
-    box-shadow:0 0 25px rgba(0,0,0,0.4);
-    animation:fade 0.4s;
-}
-
-/* ANIMAÇÃO */
-@keyframes fade{
-    from{opacity:0; transform:translateY(10px);}
-    to{opacity:1; transform:translateY(0);}
+background:white;
+color:black;
+margin-top:30px;
+padding:30px;
+border-radius:12px;
+width:90%;
+max-width:900px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
 /* PRODUTO */
 .produto{
-    border-bottom:1px solid #e2e8f0;
-    padding:15px 0;
+border-bottom:1px solid #e2e8f0;
+padding:15px 0;
 }
 
 .produto:last-child{
-    border:none;
+border:none;
 }
 
 .produto h3{
-    margin-bottom:8px;
+margin-bottom:8px;
+}
+
+/* PREÇO */
+.preco{
+color:#16a34a;
+font-weight:bold;
+margin-top:5px;
 }
 
 /* BOTÃO */
 .botao{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 18px;
-    background:#0ea5e9;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#0ea5e9;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
 }
 
 .botao:hover{
-    background:#0284c7;
-    transform:scale(1.05);
+background:#0284c7;
+transform:scale(1.05);
 }
 
 /* FOOTER */
 footer{
-    margin-top:30px;
-    margin-bottom:20px;
-    text-align:center;
+margin-top:30px;
+margin-bottom:20px;
+text-align:center;
 }
 
 footer a{
-    color:#38bdf8;
-    text-decoration:none;
-    margin:0 10px;
+color:#38bdf8;
+text-decoration:none;
+margin:0 10px;
 }
 
 footer a:hover{
-    text-decoration:underline;
-}
-
-/* ESCONDER */
-.hidden{
-    display:none;
+text-decoration:underline;
 }
 
 </style>
 
 </head>
 <body>
-
 
 <header>
 
@@ -146,50 +138,13 @@ A joia rara entre milhares de opções
 </header>
 
 
-<!-- PAGINA INICIAL -->
 <div id="inicio" class="container">
 
 <h2>Produtos recomendados</h2>
 
-
-<!-- PRODUTO 1 -->
-<div class="produto">
-
-<h3>Produto Exemplo 1</h3>
-
-<p>Descrição curta do produto.</p>
-
-<a href="SEU_LINK_AFILIADO_AQUI"
-class="botao"
-target="_blank">
-
-Ver produto
-
-</a>
+<div id="lista-produtos"></div>
 
 </div>
-
-
-<!-- PRODUTO 2 -->
-<div class="produto">
-
-<h3>Produto Exemplo 2</h3>
-
-<p>Descrição curta do produto.</p>
-
-<a href="SEU_LINK_AFILIADO_AQUI"
-class="botao"
-target="_blank">
-
-Ver produto
-
-</a>
-
-</div>
-
-
-</div>
-
 
 
 <footer>
@@ -203,13 +158,83 @@ Ver produto
 </footer>
 
 
-
 <script>
 
-/* FUNÇÃO VOLTAR INICIO */
-function voltarInicio(){
+/* LISTA DE PRODUTOS */
 
-document.getElementById("inicio").classList.remove("hidden");
+const produtos = [
+
+{
+nome:"JBL Tune 520BT Sem Fio",
+preco:207.52,
+link:"https://amzn.to/46rJKQf"
+},
+
+{
+nome:"JBL Tune 500 Com Fio",
+preco:137.76,
+link:"https://amzn.to/4bEFSPt"
+},
+
+{
+nome:"Fone Bluetooth AerJoy",
+preco:163.90,
+link:"https://amzn.to/4bxUTma"
+},
+
+{
+nome:"Echo Dot Alexa Azul",
+preco:428.99,
+link:"https://amzn.to/4aibNTx"
+},
+
+{
+nome:"Mouse Logitech G203 RGB",
+preco:135.90,
+link:"https://amzn.to/46mGSEk"
+},
+
+{
+nome:"Teclado Redragon Kumara",
+preco:200.00,
+link:"https://amzn.to/3Ms3EE3"
+}
+
+];
+
+
+/* MOSTRAR PRODUTOS */
+
+const lista = document.getElementById("lista-produtos");
+
+produtos.forEach(produto => {
+
+const div = document.createElement("div");
+
+div.className = "produto";
+
+div.innerHTML = `
+
+<h3>${produto.nome}</h3>
+
+<div class="preco">
+R$ ${produto.preco.toFixed(2)}
+</div>
+
+<a href="${produto.link}" target="_blank" class="botao">
+Ver produto
+</a>
+
+`;
+
+lista.appendChild(div);
+
+});
+
+
+/* VOLTAR INICIO */
+
+function voltarInicio(){
 
 window.scrollTo({
 top:0,
@@ -219,7 +244,6 @@ behavior:"smooth"
 }
 
 </script>
-
 
 
 </body>
