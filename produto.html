@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Produto</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1 onclick="voltar()" style="cursor:pointer;">
+Garimpo Digital
+</h1>
+
+</header>
+
+<main id="produto"></main>
+
+<script src="script.js"></script>
+
+<script>
+
+function voltar(){
+window.location.href="index.html";
+}
+
+const url=new URLSearchParams(window.location.search);
+
+const id=url.get("id");
+
+const produto=produtos.find(p=>p.id===id);
+
+document.getElementById("produto").innerHTML=`
+
+<div class="card">
+
+<img src="${produto.imagem}">
+
+<h2>${produto.nome}</h2>
+
+<div class="price">
+R$ ${produto.preco.toFixed(2)}
+</div>
+
+<a class="buy" href="${produto.link}" target="_blank">
+Comprar na Amazon
+</a>
+
+</div>
+
+`;
+
+</script>
+
+</body>
+</html>
