@@ -38,12 +38,6 @@ box-shadow:0 2px 10px rgba(0,0,0,0.5);
 .site-name{
 font-size:28px;
 font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.site-name:hover{
-color:#38bdf8;
 }
 
 .slogan{
@@ -62,6 +56,35 @@ border-radius:12px;
 width:90%;
 max-width:900px;
 box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+/* BARRA DE PESQUISA */
+.search-box{
+margin-bottom:20px;
+display:flex;
+gap:10px;
+}
+
+.search-box input{
+flex:1;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.search-box button{
+padding:12px 20px;
+border:none;
+background:#0ea5e9;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.search-box button:hover{
+background:#0284c7;
 }
 
 /* PRODUTO */
@@ -95,12 +118,10 @@ color:white;
 text-decoration:none;
 border-radius:8px;
 font-weight:bold;
-transition:0.3s;
 }
 
 .botao:hover{
 background:#0284c7;
-transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -127,7 +148,7 @@ text-decoration:underline;
 
 <header>
 
-<div class="site-name" onclick="voltarInicio()">
+<div class="site-name">
 Garimpo Digital
 </div>
 
@@ -138,9 +159,24 @@ A joia rara entre milhares de opções
 </header>
 
 
-<div id="inicio" class="container">
+<div class="container">
 
 <h2>Produtos recomendados</h2>
+
+<!-- BARRA DE PESQUISA -->
+<div class="search-box">
+
+<input
+type="text"
+id="pesquisa"
+placeholder="Pesquisar produto... (ex: teclado, mouse, jbl)"
+>
+
+<button onclick="pesquisar()">
+Pesquisar
+</button>
+
+</div>
 
 <div id="lista-produtos"></div>
 
@@ -160,7 +196,7 @@ A joia rara entre milhares de opções
 
 <script>
 
-/* LISTA DE PRODUTOS */
+/* PRODUTOS */
 
 const produtos = [
 
@@ -205,9 +241,20 @@ link:"https://amzn.to/3Ms3EE3"
 
 /* MOSTRAR PRODUTOS */
 
-const lista = document.getElementById("lista-produtos");
+function mostrar(lista){
 
-produtos.forEach(produto => {
+const area = document.getElementById("lista-produtos");
+
+area.innerHTML = "";
+
+if(lista.length === 0){
+
+area.innerHTML = "<p>Nenhum produto encontrado.</p>";
+return;
+
+}
+
+lista.forEach(produto => {
 
 const div = document.createElement("div");
 
@@ -227,24 +274,42 @@ Ver produto
 
 `;
 
-lista.appendChild(div);
+area.appendChild(div);
 
-});
-
-
-/* VOLTAR INICIO */
-
-function voltarInicio(){
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
 });
 
 }
 
-</script>
 
+/* PESQUISAR E FILTRAR */
+
+function pesquisar(){
+
+const texto = document
+.getElementById("pesquisa")
+.value
+.toLowerCase();
+
+const filtrados = produtos.filter(produto =>
+produto.nome.toLowerCase().includes(texto)
+);
+
+mostrar(filtrados);
+
+}
+
+
+/* PESQUISA AUTOMÁTICA AO DIGITAR */
+
+document.getElementById("pesquisa")
+.addEventListener("input", pesquisar);
+
+
+/* INICIAR */
+
+mostrar(produtos);
+
+</script>
 
 </body>
 </html>
