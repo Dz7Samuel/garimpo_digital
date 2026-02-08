@@ -5,6 +5,15 @@ box-sizing:border-box;
 font-family:Segoe UI,Arial;
 }
 
+.produto img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:8px;
+}
+
+
 body{
 background:#0f172a;
 color:white;
