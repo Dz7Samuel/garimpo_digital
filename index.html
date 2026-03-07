@@ -1,321 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Garimpo Digital</title>
+    <title>Garimpo Digital</title>
 
-<style>
+    <style>
 
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+        /* RESET */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-/* BODY */
-body{
-background: linear-gradient(135deg,#0f172a,#1e293b);
-color:white;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-}
+        /* BODY */
+        body{
+            background: linear-gradient(135deg,#0f172a,#1e293b);
+            color:white;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
 
-/* HEADER */
-header{
-background:#020617;
-width:100%;
-padding:20px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.5);
-}
+        /* HEADER */
+        header{
+            background:#020617;
+            width:100%;
+            padding:20px;
+            text-align:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.5);
+        }
 
-.site-name{
-font-size:28px;
-font-weight:bold;
-}
+        .site-name{
+            font-size:28px;
+            font-weight:bold;
+        }
 
-.slogan{
-font-size:14px;
-color:#94a3b8;
-margin-top:5px;
-}
+        .slogan{
+            font-size:14px;
+            color:#94a3b8;
+            margin-top:5px;
+        }
 
-/* CONTAINER */
-.container{
-background:linear-gradient(135deg,#f59e0b,#f97316);
-color:#0f172a;
-margin-top:30px;
-padding:30px;
-border-radius:12px;
-width:90%;
-max-width:900px;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
-}
+        /* CONTAINER */
+        .container{
+            background:linear-gradient(135deg,#f59e0b,#f97316);
+            color:#0f172a;
+            margin-top:30px;
+            padding:30px;
+            border-radius:12px;
+            width:90%;
+            max-width:900px;
+            box-shadow:0 0 25px rgba(0,0,0,0.4);
+        }
 
+        /* BARRA DE PESQUISA */
+        .search-box{
+            margin-bottom:20px;
+            display:flex;
+            gap:10px;
+        }
 
-/* BARRA DE PESQUISA */
-.search-box{
-margin-bottom:20px;
-display:flex;
-gap:10px;
-}
+        .search-box input{
+            flex:1;
+            padding:12px;
+            border-radius:8px;
+            border:1px solid #ccc;
+            font-size:16px;
+        }
 
-.search-box input{
-flex:1;
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
-}
+        .search-box button{
+            padding:12px 20px;
+            border:none;
+            background:#0ea5e9;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+        }
 
-.search-box button{
-padding:12px 20px;
-border:none;
-background:#0ea5e9;
-color:white;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
+        .search-box button:hover{
+            background:#0284c7;
+        }
 
-.search-box button:hover{
-background:#0284c7;
-}
+        /* PRODUTOS */
+        .produto{
+            background:white;
+            color:#0f172a;
+            padding:20px;
+            border-radius:10px;
+            margin-bottom:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+        }
 
-/* PRODUTO */
-.produto{
-border-bottom:1px solid #e2e8f0;
-padding:15px 0;
-}
+        .produto img{
+            width:140px;
+            border-radius:10px;
+            margin-bottom:10px;
+        }
 
-.produto:last-child{
-border:none;
-}
+        /* ESTRELAS */
+        .estrelas{
+            color:#facc15;
+            font-size:18px;
+            margin-bottom:5px;
+        }
 
-.produto h3{
-margin-bottom:8px;
-}
+        /* PREÇO */
+        .preco{
+            color:#16a34a;
+            font-weight:bold;
+            margin-top:5px;
+        }
 
-/* PREÇO */
-.preco{
-color:#16a34a;
-font-weight:bold;
-margin-top:5px;
-}
+        /* BOTÃO */
+        .botao{
+            display:block;
+            text-align:center;
+            margin-top:10px;
+            padding:12px;
+            background:linear-gradient(90deg,#22c55e,#16a34a);
+            color:white;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+            text-decoration:none;
+        }
 
-/* BOTÃO */
-.botao{
-display:block;
-text-align:center;
-margin-top:10px;
-padding:12px;
-background:linear-gradient(90deg,#22c55e,#16a34a);
-color:white;
-border-radius:8px;
-font-weight:bold;
-transition:0.3s;
-}
+        .botao:hover{
+            transform:scale(1.05);
+        }
 
-.botao:hover{
-transform:scale(1.05);
-}
+        /* FOOTER */
+        footer{
+            margin-top:30px;
+            margin-bottom:20px;
+            text-align:center;
+        }
 
-/* FOOTER */
-footer{
-margin-top:30px;
-margin-bottom:20px;
-text-align:center;
-}
+        footer a{
+            color:#38bdf8;
+            text-decoration:none;
+            margin:0 10px;
+        }
 
-footer a{
-color:#38bdf8;
-text-decoration:none;
-margin:0 10px;
-}
+        footer a:hover{
+            text-decoration:underline;
+        }
 
-footer a:hover{
-text-decoration:underline;
-}
-
-</style>
-
+    </style>
 </head>
+
 <body>
 
 <header>
 
-<div class="site-name">
-Garimpo Digital
-</div>
+    <div class="site-name">
+        Garimpo Digital
+    </div>
 
-<div class="slogan">
-A joia rara entre milhares de opções
-</div>
+    <div class="slogan">
+        A joia rara entre milhares de opções
+    </div>
 
 </header>
 
-
 <div class="container">
 
-<h2>Produtos recomendados</h2>
+    <h2>Produtos recomendados</h2>
 
-<!-- BARRA DE PESQUISA -->
-<div class="search-box">
+    <p style="margin-top:10px;font-weight:bold;color:#065f46;">
+        ✔ Produtos bem avaliados
+        ✔ Entrega rápida pela Amazon
+        ✔ Compra segura
+    </p>
 
-<input
-type="text"
-id="pesquisa"
-placeholder="Pesquisar produto... (ex: teclado, mouse, jbl)"
->
+    <br>
 
-<button onclick="pesquisar()">
-Pesquisar
-</button>
+    <!-- BARRA DE PESQUISA -->
+    <div class="search-box">
+
+        <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar produto... (ex: teclado, mouse, jbl)"
+        >
+
+        <button onclick="pesquisar()">
+            Pesquisar
+        </button>
+
+    </div>
+
+    <div id="lista-produtos"></div>
 
 </div>
-
-<div id="lista-produtos"></div>
-
-</div>
-
 
 <footer>
 
-<a href="/privacy/">Política de Privacidade</a>
+    <a href="privacy.html">Política de Privacidade</a>
 
-<a href="/terms/">Termos de Uso</a>
+    <a href="terms.html">Termos de Uso</a>
+
+    <p style="font-size:12px;color:#94a3b8;margin-top:10px;">
+        Como Associado da Amazon, podemos ganhar comissão por compras qualificadas.
+    </p>
 
 </footer>
 
-
 <script>
 
-/* PRODUTOS */
+    /* PRODUTOS */
 
-const produtos = [
+    const produtos = [
 
-{
-nome:"JBL Tune 520BT Sem Fio",
-preco:206.10,
-link:"https://amzn.to/46rJKQf",
-imagepath: "image/fone.jpg",
-},
+        {
+            nome:"JBL Tune 520BT Sem Fio",
+            preco:206.10,
+            link:"https://amzn.to/46rJKQf",
+            imagepath:"image/fone.jpg"
+        },
 
-{
-nome:"JBL Tune 500 Com Fio",
-preco:159.90,
-link:"https://amzn.to/4bEFSPt",
-imagepath: "image/fonecomfio.jpg",
-},
+        {
+            nome:"JBL Tune 500 Com Fio",
+            preco:159.90,
+            link:"https://amzn.to/4bEFSPt",
+            imagepath:"image/fonecomfio.jpg"
+        },
 
-{
-nome:"Fone Bluetooth AerJoy",
-preco:125.00,
-link:"https://amzn.to/4bxUTma",
-imagepath: "image/foneaer.jpg",
-},
+        {
+            nome:"Fone Bluetooth AerJoy",
+            preco:125.00,
+            link:"https://amzn.to/4bxUTma",
+            imagepath:"image/foneaer.jpg"
+        },
 
-{
-nome:"Echo Dot Alexa Azul",
-preco:429.00,
-link:"https://amzn.to/4aibNTx",
-imagepath: "image/alexaazul.jpg",
-},
+        {
+            nome:"Echo Dot Alexa Azul",
+            preco:429.00,
+            link:"https://amzn.to/4aibNTx",
+            imagepath:"image/alexaazul.jpg"
+        },
 
-{
-nome:"Mouse Logitech G203 RGB",
-preco:112.96,
-link:"https://amzn.to/46mGSEk",
-imagepath: "image/mouseg203branco.jpg",
-},
+        {
+            nome:"Mouse Logitech G203 RGB",
+            preco:112.96,
+            link:"https://amzn.to/46mGSEk",
+            imagepath:"image/mouseg203branco.jpg"
+        },
+
+        {
+            nome:"Teclado Mecânico Gamer Redragon Dark Avenger RGB",
+            preco:169.99,
+            link:"https://amzn.to/46N4JgL",
+            imagepath:"image/tecladoregragondark.jpg"
+        }
+
+    ];
 
 
-{nome:"Teclado Mecânico Gamer Redragon Dark Avenger RGB (Switch Blue) - Preto",
-preco:169.99,
-link:"https://amzn.to/46N4JgL",
-imagepath: "image/tecladoregragondark.jpg",
-},
+    /* MOSTRAR PRODUTOS */
 
-];
+    function mostrar(lista){
 
+        const area = document.getElementById("lista-produtos");
 
-/* MOSTRAR PRODUTOS */
+        area.innerHTML = "";
 
-function mostrar(lista){
+        if(lista.length === 0){
 
-const area = document.getElementById("lista-produtos");
+            area.innerHTML = "<p>Nenhum produto encontrado.</p>";
+            return;
 
-area.innerHTML = "";
+        }
 
-if(lista.length === 0){
+        lista.forEach(produto => {
 
-area.innerHTML = "<p>Nenhum produto encontrado.</p>";
-return;
+            const div = document.createElement("div");
 
-}
+            div.className = "produto";
 
-lista.forEach(produto => {
+            div.innerHTML = `
 
-const div = document.createElement("div");
-
-div.className = "produto";
-
-div.innerHTML = `
-
-<img src=${produto.imagepath}>
+<img src="${produto.imagepath}">
 
 <h3>${produto.nome}</h3>
+
+<div class="estrelas">
+★★★★★
+</div>
 
 <div class="preco">
 R$ ${produto.preco.toFixed(2)}
 </div>
 
 <a href="${produto.link}" target="_blank" class="botao">
-Ver produto
+Ver na Amazon
 </a>
 
 `;
 
-area.appendChild(div);
+            area.appendChild(div);
 
-});
+        });
 
-}
-
-
-/* PESQUISAR E FILTRAR */
-
-function pesquisar(){
-
-const texto = document
-.getElementById("pesquisa")
-.value
-.toLowerCase();
-
-const filtrados = produtos.filter(produto =>
-produto.nome.toLowerCase().includes(texto)
-);
-
-mostrar(filtrados);
-
-}
+    }
 
 
-/* PESQUISA AUTOMÁTICA AO DIGITAR */
+    /* PESQUISAR */
 
-document.getElementById("pesquisa")
-.addEventListener("input", pesquisar);
+    function pesquisar(){
 
+        const texto = document
+            .getElementById("pesquisa")
+            .value
+            .toLowerCase();
 
-/* INICIAR */
+        const filtrados = produtos.filter(produto =>
+            produto.nome.toLowerCase().includes(texto)
+        );
 
-mostrar(produtos);
+        mostrar(filtrados);
+
+    }
+
+    /* PESQUISA AUTOMÁTICA */
+
+    document.getElementById("pesquisa")
+        .addEventListener("input", pesquisar);
+
+    /* INICIAR */
+
+    mostrar(produtos);
 
 </script>
 
