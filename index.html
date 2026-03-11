@@ -6,7 +6,9 @@
 
     <title>Garimpo Digital | Achados baratos de tecnologia</title>
 
-    <link rel="icon" href="image/logo.png">
+    <meta name="description" content="Achados baratos de tecnologia na Amazon. Fones, teclados, mouse gamer e gadgets com ótimo custo benefício.">
+
+    <link rel="icon" href="image/logo.png.png">
 
     <style>
 
@@ -38,7 +40,7 @@
         }
 
         .site-name{
-        font-size:30px;
+        font-size:32px;
         font-weight:bold;
         }
 
@@ -56,7 +58,7 @@
         padding:30px;
         border-radius:12px;
         width:90%;
-        max-width:1000px;
+        max-width:1100px;
         box-shadow:0 0 25px rgba(0,0,0,0.4);
         }
 
@@ -68,7 +70,7 @@
         line-height:1.8;
         }
 
-        /* BARRA DE PESQUISA */
+        /* SEARCH */
         .search-box{
         margin:25px 0;
         display:flex;
@@ -97,14 +99,14 @@
         background:#0284c7;
         }
 
-        /* GRID PRODUTOS */
+        /* GRID */
         #lista-produtos{
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
         gap:20px;
         }
 
-        /* CARD PRODUTO */
+        /* PRODUTO CARD */
         .produto{
         background:white;
         color:#0f172a;
@@ -112,23 +114,26 @@
         border-radius:10px;
         box-shadow:0 5px 15px rgba(0,0,0,0.2);
         text-align:center;
-        transition:0.3s;
+        transition:0.25s;
         }
 
         .produto:hover{
-        transform:translateY(-5px);
+        transform:translateY(-6px);
+        box-shadow:0 10px 20px rgba(0,0,0,0.3);
         }
 
         .produto img{
         width:120px;
+        height:120px;
+        object-fit:contain;
         margin-bottom:10px;
-        border-radius:8px;
         }
 
         /* ESTRELAS */
         .estrelas{
         color:#facc15;
         margin-bottom:6px;
+        font-size:18px;
         }
 
         /* PREÇO */
@@ -136,6 +141,7 @@
         color:#16a34a;
         font-weight:bold;
         margin-top:5px;
+        font-size:18px;
         }
 
         /* BOTÃO */
@@ -172,6 +178,20 @@
         text-decoration:underline;
         }
 
+        /* BOTÃO TOPO */
+        #topo{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        background:#0ea5e9;
+        color:white;
+        border:none;
+        padding:10px 14px;
+        border-radius:8px;
+        cursor:pointer;
+        font-weight:bold;
+        }
+
     </style>
 </head>
 
@@ -191,12 +211,12 @@
 
 <div class="container">
 
-    <h2>Produtos recomendados</h2>
+    <h2>Achados baratos de tecnologia</h2>
 
     <p class="confiança">
-        ✔ Produtos bem avaliados <br>
-        ✔ Entrega rápida pela Amazon <br>
-        ✔ Compra segura
+        ✔ Selecionamos apenas produtos bem avaliados <br>
+        ✔ Links oficiais da Amazon <br>
+        ✔ Atualizado frequentemente
     </p>
 
     <div class="search-box">
@@ -227,6 +247,8 @@
     </p>
 
 </footer>
+
+<button id="topo">↑</button>
 
 <script>
 
@@ -278,29 +300,28 @@
 
     ];
 
-
     /* MOSTRAR PRODUTOS */
 
     function mostrar(lista){
 
-    const area = document.getElementById("lista-produtos");
+    const area=document.getElementById("lista-produtos");
 
-    area.innerHTML = "";
+    area.innerHTML="";
 
-    if(lista.length === 0){
+    if(lista.length===0){
 
-    area.innerHTML = "<p>Nenhum produto encontrado.</p>";
+    area.innerHTML="<p>Nenhum produto encontrado.</p>";
     return;
 
     }
 
-    lista.forEach(produto => {
+    lista.forEach(produto=>{
 
-    const div = document.createElement("div");
+    const div=document.createElement("div");
 
-    div.className = "produto";
+    div.className="produto";
 
-    div.innerHTML = `
+    div.innerHTML=`
 
     <img src="${produto.imagepath}">
 
@@ -326,17 +347,16 @@
 
     }
 
-
     /* PESQUISAR */
 
     function pesquisar(){
 
-    const texto = document
+    const texto=document
     .getElementById("pesquisa")
     .value
     .toLowerCase();
 
-    const filtrados = produtos.filter(produto =>
+    const filtrados=produtos.filter(produto =>
     produto.nome.toLowerCase().includes(texto)
     );
 
@@ -347,7 +367,13 @@
     /* PESQUISA AUTOMÁTICA */
 
     document.getElementById("pesquisa")
-    .addEventListener("input", pesquisar);
+    .addEventListener("input",pesquisar);
+
+    /* BOTÃO TOPO */
+
+    document.getElementById("topo").onclick=function(){
+    window.scrollTo({top:0,behavior:"smooth"});
+    };
 
     /* INICIAR */
 
