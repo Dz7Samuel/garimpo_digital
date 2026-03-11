@@ -10,147 +10,164 @@
 
         /* RESET */
         *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
         }
 
         /* BODY */
         body{
-            background: linear-gradient(135deg,#0f172a,#1e293b);
-            color:white;
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
+        background:linear-gradient(135deg,#0f172a,#1e293b);
+        color:white;
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         }
 
         /* HEADER */
         header{
-            background:#020617;
-            width:100%;
-            padding:20px;
-            text-align:center;
-            box-shadow:0 2px 10px rgba(0,0,0,0.5);
+        background:#020617;
+        width:100%;
+        padding:25px;
+        text-align:center;
+        box-shadow:0 2px 10px rgba(0,0,0,0.5);
         }
 
         .site-name{
-            font-size:28px;
-            font-weight:bold;
+        font-size:30px;
+        font-weight:bold;
         }
 
         .slogan{
-            font-size:14px;
-            color:#94a3b8;
-            margin-top:5px;
+        font-size:14px;
+        color:#94a3b8;
+        margin-top:5px;
         }
 
         /* CONTAINER */
         .container{
-            background:linear-gradient(135deg,#f59e0b,#f97316);
-            color:#0f172a;
-            margin-top:30px;
-            padding:30px;
-            border-radius:12px;
-            width:90%;
-            max-width:900px;
-            box-shadow:0 0 25px rgba(0,0,0,0.4);
+        background:linear-gradient(135deg,#f59e0b,#f97316);
+        color:#0f172a;
+        margin-top:30px;
+        padding:30px;
+        border-radius:12px;
+        width:90%;
+        max-width:1000px;
+        box-shadow:0 0 25px rgba(0,0,0,0.4);
+        }
+
+        /* CONFIANÇA */
+        .confiança{
+        margin-top:10px;
+        font-weight:bold;
+        color:#065f46;
+        line-height:1.8;
         }
 
         /* BARRA DE PESQUISA */
         .search-box{
-            margin-bottom:20px;
-            display:flex;
-            gap:10px;
+        margin:25px 0;
+        display:flex;
+        gap:10px;
         }
 
         .search-box input{
-            flex:1;
-            padding:12px;
-            border-radius:8px;
-            border:1px solid #ccc;
-            font-size:16px;
+        flex:1;
+        padding:12px;
+        border-radius:8px;
+        border:1px solid #ccc;
+        font-size:16px;
         }
 
         .search-box button{
-            padding:12px 20px;
-            border:none;
-            background:#0ea5e9;
-            color:white;
-            border-radius:8px;
-            cursor:pointer;
-            font-weight:bold;
+        padding:12px 20px;
+        border:none;
+        background:#0ea5e9;
+        color:white;
+        border-radius:8px;
+        cursor:pointer;
+        font-weight:bold;
         }
 
         .search-box button:hover{
-            background:#0284c7;
+        background:#0284c7;
         }
 
-        /* PRODUTOS */
+        /* GRID PRODUTOS */
+        #lista-produtos{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:20px;
+        }
+
+        /* CARD PRODUTO */
         .produto{
-            background:white;
-            color:#0f172a;
-            padding:20px;
-            border-radius:10px;
-            margin-bottom:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.2);
-            text-align:center;
+        background:white;
+        color:#0f172a;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        text-align:center;
+        transition:0.3s;
+        }
+
+        .produto:hover{
+        transform:translateY(-5px);
         }
 
         .produto img{
-            width:140px;
-            border-radius:10px;
-            margin-bottom:10px;
+        width:120px;
+        margin-bottom:10px;
+        border-radius:8px;
         }
 
         /* ESTRELAS */
         .estrelas{
-            color:#facc15;
-            font-size:18px;
-            margin-bottom:5px;
+        color:#facc15;
+        margin-bottom:6px;
         }
 
         /* PREÇO */
         .preco{
-            color:#16a34a;
-            font-weight:bold;
-            margin-top:5px;
+        color:#16a34a;
+        font-weight:bold;
+        margin-top:5px;
         }
 
         /* BOTÃO */
         .botao{
-            display:block;
-            text-align:center;
-            margin-top:10px;
-            padding:12px;
-            background:linear-gradient(90deg,#22c55e,#16a34a);
-            color:white;
-            border-radius:8px;
-            font-weight:bold;
-            transition:0.3s;
-            text-decoration:none;
+        display:block;
+        margin-top:10px;
+        padding:10px;
+        background:linear-gradient(90deg,#22c55e,#16a34a);
+        color:white;
+        border-radius:8px;
+        text-decoration:none;
+        font-weight:bold;
+        transition:0.3s;
         }
 
         .botao:hover{
-            transform:scale(1.05);
+        transform:scale(1.05);
         }
 
         /* FOOTER */
         footer{
-            margin-top:30px;
-            margin-bottom:20px;
-            text-align:center;
+        margin-top:40px;
+        margin-bottom:20px;
+        text-align:center;
         }
 
         footer a{
-            color:#38bdf8;
-            text-decoration:none;
-            margin:0 10px;
+        color:#38bdf8;
+        text-decoration:none;
+        margin:0 10px;
         }
 
         footer a:hover{
-            text-decoration:underline;
+        text-decoration:underline;
         }
 
     </style>
@@ -174,15 +191,12 @@
 
     <h2>Produtos recomendados</h2>
 
-    <p style="margin-top:10px;font-weight:bold;color:#065f46;">
-        ✔ Produtos bem avaliados
-        ✔ Entrega rápida pela Amazon
+    <p class="confiança">
+        ✔ Produtos bem avaliados <br>
+        ✔ Entrega rápida pela Amazon <br>
         ✔ Compra segura
     </p>
 
-    <br>
-
-    <!-- BARRA DE PESQUISA -->
     <div class="search-box">
 
         <input
@@ -204,7 +218,6 @@
 <footer>
 
     <a href="privacy.html">Política de Privacidade</a>
-
     <a href="terms.html">Termos de Uso</a>
 
     <p style="font-size:12px;color:#94a3b8;margin-top:10px;">
@@ -219,47 +232,47 @@
 
     const produtos = [
 
-        {
-            nome:"JBL Tune 520BT Sem Fio",
-            preco:206.10,
-            link:"https://amzn.to/46rJKQf",
-            imagepath:"image/fone.jpg"
-        },
+    {
+    nome:"JBL Tune 520BT Sem Fio",
+    preco:206.10,
+    link:"https://amzn.to/46rJKQf",
+    imagepath:"image/fone.jpg"
+    },
 
-        {
-            nome:"JBL Tune 500 Com Fio",
-            preco:159.90,
-            link:"https://amzn.to/4bEFSPt",
-            imagepath:"image/fonecomfio.jpg"
-        },
+    {
+    nome:"JBL Tune 500 Com Fio",
+    preco:159.90,
+    link:"https://amzn.to/4bEFSPt",
+    imagepath:"image/fonecomfio.jpg"
+    },
 
-        {
-            nome:"Fone Bluetooth AerJoy",
-            preco:125.00,
-            link:"https://amzn.to/4bxUTma",
-            imagepath:"image/foneaer.jpg"
-        },
+    {
+    nome:"Fone Bluetooth AerJoy",
+    preco:125.00,
+    link:"https://amzn.to/4bxUTma",
+    imagepath:"image/foneaer.jpg"
+    },
 
-        {
-            nome:"Echo Dot Alexa Azul",
-            preco:429.00,
-            link:"https://amzn.to/4aibNTx",
-            imagepath:"image/alexaazul.jpg"
-        },
+    {
+    nome:"Echo Dot Alexa Azul",
+    preco:429.00,
+    link:"https://amzn.to/4aibNTx",
+    imagepath:"image/alexaazul.jpg"
+    },
 
-        {
-            nome:"Mouse Logitech G203 RGB",
-            preco:112.96,
-            link:"https://amzn.to/46mGSEk",
-            imagepath:"image/mouseg203branco.jpg"
-        },
+    {
+    nome:"Mouse Logitech G203 RGB",
+    preco:112.96,
+    link:"https://amzn.to/46mGSEk",
+    imagepath:"image/mouseg203branco.jpg"
+    },
 
-        {
-            nome:"Teclado Mecânico Gamer Redragon Dark Avenger RGB",
-            preco:169.99,
-            link:"https://amzn.to/46N4JgL",
-            imagepath:"image/tecladoregragondark.jpg"
-        }
+    {
+    nome:"Teclado Mecânico Redragon Dark Avenger",
+    preco:169.99,
+    link:"https://amzn.to/46N4JgL",
+    imagepath:"image/tecladoregragondark.jpg"
+    }
 
     ];
 
@@ -268,46 +281,46 @@
 
     function mostrar(lista){
 
-        const area = document.getElementById("lista-produtos");
+    const area = document.getElementById("lista-produtos");
 
-        area.innerHTML = "";
+    area.innerHTML = "";
 
-        if(lista.length === 0){
+    if(lista.length === 0){
 
-            area.innerHTML = "<p>Nenhum produto encontrado.</p>";
-            return;
+    area.innerHTML = "<p>Nenhum produto encontrado.</p>";
+    return;
 
-        }
+    }
 
-        lista.forEach(produto => {
+    lista.forEach(produto => {
 
-            const div = document.createElement("div");
+    const div = document.createElement("div");
 
-            div.className = "produto";
+    div.className = "produto";
 
-            div.innerHTML = `
+    div.innerHTML = `
 
-<img src="${produto.imagepath}">
+    <img src="${produto.imagepath}">
 
-<h3>${produto.nome}</h3>
+    <h3>${produto.nome}</h3>
 
-<div class="estrelas">
-★★★★★
-</div>
+    <div class="estrelas">
+    ★★★★★
+    </div>
 
-<div class="preco">
-R$ ${produto.preco.toFixed(2)}
-</div>
+    <div class="preco">
+    R$ ${produto.preco.toFixed(2)}
+    </div>
 
-<a href="${produto.link}" target="_blank" class="botao">
-Ver na Amazon
-</a>
+    <a href="${produto.link}" target="_blank" class="botao">
+    Ver na Amazon
+    </a>
 
-`;
+    `;
 
-            area.appendChild(div);
+    area.appendChild(div);
 
-        });
+    });
 
     }
 
@@ -316,23 +329,23 @@ Ver na Amazon
 
     function pesquisar(){
 
-        const texto = document
-            .getElementById("pesquisa")
-            .value
-            .toLowerCase();
+    const texto = document
+    .getElementById("pesquisa")
+    .value
+    .toLowerCase();
 
-        const filtrados = produtos.filter(produto =>
-            produto.nome.toLowerCase().includes(texto)
-        );
+    const filtrados = produtos.filter(produto =>
+    produto.nome.toLowerCase().includes(texto)
+    );
 
-        mostrar(filtrados);
+    mostrar(filtrados);
 
     }
 
     /* PESQUISA AUTOMÁTICA */
 
     document.getElementById("pesquisa")
-        .addEventListener("input", pesquisar);
+    .addEventListener("input", pesquisar);
 
     /* INICIAR */
 
