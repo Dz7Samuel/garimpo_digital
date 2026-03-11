@@ -39,6 +39,11 @@
         box-shadow:0 2px 10px rgba(0,0,0,0.5);
         }
 
+        .logo{
+        width:110px;
+        margin-bottom:10px;
+        }
+
         .site-name{
         font-size:32px;
         font-weight:bold;
@@ -62,15 +67,34 @@
         box-shadow:0 0 25px rgba(0,0,0,0.4);
         }
 
-        /* CONFIANÇA */
-        .confiança{
-        margin-top:10px;
+        /* CATEGORIAS */
+
+        .categorias{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-top:15px;
+        margin-bottom:20px;
+        }
+
+        .categorias button{
+        background:#0ea5e9;
+        border:none;
+        color:white;
+        padding:10px 14px;
+        border-radius:8px;
+        cursor:pointer;
         font-weight:bold;
-        color:#065f46;
-        line-height:1.8;
+        transition:0.2s;
+        }
+
+        .categorias button:hover{
+        background:#0284c7;
+        transform:scale(1.05);
         }
 
         /* SEARCH */
+
         .search-box{
         margin:25px 0;
         display:flex;
@@ -100,13 +124,15 @@
         }
 
         /* GRID */
+
         #lista-produtos{
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
         gap:20px;
         }
 
-        /* PRODUTO CARD */
+        /* PRODUTO */
+
         .produto{
         background:white;
         color:#0f172a;
@@ -130,6 +156,7 @@
         }
 
         /* ESTRELAS */
+
         .estrelas{
         color:#facc15;
         margin-bottom:6px;
@@ -137,6 +164,7 @@
         }
 
         /* PREÇO */
+
         .preco{
         color:#16a34a;
         font-weight:bold;
@@ -145,6 +173,7 @@
         }
 
         /* BOTÃO */
+
         .botao{
         display:block;
         margin-top:10px;
@@ -162,6 +191,7 @@
         }
 
         /* FOOTER */
+
         footer{
         margin-top:40px;
         margin-bottom:20px;
@@ -179,6 +209,7 @@
         }
 
         /* BOTÃO TOPO */
+
         #topo{
         position:fixed;
         bottom:20px;
@@ -199,6 +230,8 @@
 
 <header>
 
+    <img src="image/logo.png.png" class="logo">
+
     <div class="site-name">
         Garimpo Digital
     </div>
@@ -211,20 +244,32 @@
 
 <div class="container">
 
-    <h2>Achados baratos de tecnologia</h2>
+    <h2>Produtos recomendados</h2>
 
-    <p class="confiança">
-        ✔ Selecionamos apenas produtos bem avaliados <br>
-        ✔ Links oficiais da Amazon <br>
-        ✔ Atualizado frequentemente
-    </p>
+    <!-- CATEGORIAS -->
+
+    <div class="categorias">
+
+        <button onclick="filtrarCategoria('todos')">Todos</button>
+
+        <button onclick="filtrarCategoria('fone')">🎧 Fones</button>
+
+        <button onclick="filtrarCategoria('mouse')">🖱️ Mouse</button>
+
+        <button onclick="filtrarCategoria('teclado')">⌨️ Teclados</button>
+
+        <button onclick="filtrarCategoria('alexa')">🔊 Alexa</button>
+
+    </div>
+
+    <!-- PESQUISA -->
 
     <div class="search-box">
 
         <input
                 type="text"
                 id="pesquisa"
-                placeholder="Pesquisar produto... (ex: teclado, mouse, jbl)"
+                placeholder="Pesquisar produto..."
         >
 
         <button onclick="pesquisar()">
@@ -240,6 +285,7 @@
 <footer>
 
     <a href="privacy.html">Política de Privacidade</a>
+
     <a href="terms.html">Termos de Uso</a>
 
     <p style="font-size:12px;color:#94a3b8;margin-top:10px;">
@@ -254,48 +300,54 @@
 
     /* PRODUTOS */
 
-    const produtos = [
+    const produtos=[
 
     {
     nome:"JBL Tune 520BT Sem Fio",
     preco:206.10,
     link:"https://amzn.to/46rJKQf",
-    imagepath:"image/fone.jpg"
+    imagepath:"image/fone.jpg",
+    categoria:"fone"
     },
 
     {
     nome:"JBL Tune 500 Com Fio",
     preco:159.90,
     link:"https://amzn.to/4bEFSPt",
-    imagepath:"image/fonecomfio.jpg"
+    imagepath:"image/fonecomfio.jpg",
+    categoria:"fone"
     },
 
     {
     nome:"Fone Bluetooth AerJoy",
     preco:125.00,
     link:"https://amzn.to/4bxUTma",
-    imagepath:"image/foneaer.jpg"
+    imagepath:"image/foneaer.jpg",
+    categoria:"fone"
     },
 
     {
     nome:"Echo Dot Alexa Azul",
     preco:429.00,
     link:"https://amzn.to/4aibNTx",
-    imagepath:"image/alexaazul.jpg"
+    imagepath:"image/alexaazul.jpg",
+    categoria:"alexa"
     },
 
     {
     nome:"Mouse Logitech G203 RGB",
     preco:112.96,
     link:"https://amzn.to/46mGSEk",
-    imagepath:"image/mouseg203branco.jpg"
+    imagepath:"image/mouseg203branco.jpg",
+    categoria:"mouse"
     },
 
     {
     nome:"Teclado Mecânico Redragon Dark Avenger",
     preco:169.99,
     link:"https://amzn.to/46N4JgL",
-    imagepath:"image/tecladoregragondark.jpg"
+    imagepath:"image/tecladoregragondark.jpg",
+    categoria:"teclado"
     }
 
     ];
@@ -327,9 +379,7 @@
 
     <h3>${produto.nome}</h3>
 
-    <div class="estrelas">
-    ★★★★★
-    </div>
+    <div class="estrelas">★★★★★</div>
 
     <div class="preco">
     R$ ${produto.preco.toFixed(2)}
@@ -364,9 +414,27 @@
 
     }
 
+    /* FILTRAR CATEGORIA */
+
+    function filtrarCategoria(cat){
+
+    if(cat==="todos"){
+    mostrar(produtos);
+    return;
+    }
+
+    const filtrados=produtos.filter(produto =>
+    produto.categoria===cat
+    );
+
+    mostrar(filtrados);
+
+    }
+
     /* PESQUISA AUTOMÁTICA */
 
-    document.getElementById("pesquisa")
+    document
+    .getElementById("pesquisa")
     .addEventListener("input",pesquisar);
 
     /* BOTÃO TOPO */
